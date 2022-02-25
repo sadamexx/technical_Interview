@@ -10,7 +10,7 @@ import Specialist from './components/Specialist';
 function App() {
   return(
     <Router>
-      <div>
+      <div className='App'>
         <Route exact path='/' component={Login}/>
         <PrivateRoute 
         path='/dashboard' 

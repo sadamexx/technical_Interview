@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import { Container, Row } from 'reactstrap';
 import ProjectCard from './ProjectCard';
+import ProjectShow from './ProjectShow';
 
 
 const Projects = () => {
@@ -23,8 +24,6 @@ const Projects = () => {
                 setError(error);
             }
         )
-        // gonna wanna map through and pass to diff cards
-        //make the cards into 
     }, []);
 
     if(error){
@@ -40,7 +39,9 @@ const Projects = () => {
                         {projectList.map(project => {
                             return(
                                 <ProjectCard 
-                                kaye={project.id}
+                                key={project.id}
+                                name={project.name}
+                                client={project.client_name}
                                 />
                             )
                         })
@@ -48,7 +49,7 @@ const Projects = () => {
                         }
                     </Row>
                 </Container>
-                
+                <ProjectShow />
 
             </div>
         )

@@ -60,8 +60,8 @@ const Profile = () => {
                                     
                                     </CardImg>                           
                                     <CardTitle tag="h3" style={{marginBottom:'15px'}} >{currentSpecialist.data.data.user.first_name} {currentSpecialist.data.data.user.last_name}</CardTitle>
-                                    <CardSubtitle tag="h6" style={{marginBottom:'10px'}} >{currentSpecialist.data.data.title}</CardSubtitle>
-                                    <CardSubtitle tag="h6" >{currentSpecialist.data.data.location_country}</CardSubtitle>
+                                    <CardSubtitle tag="h6" style={{marginBottom:'10px'}} > 💻  {currentSpecialist.data.data.title}</CardSubtitle>
+                                    <CardSubtitle tag="h6" >📍 {currentSpecialist.data.data.location_country}</CardSubtitle>
                                     </div>
                                     <CardText>{currentSpecialist.data.data.short_bio}</CardText>
                                     <CardImg></CardImg>
