@@ -30,7 +30,7 @@ const Login = (props) => {
             //didnt set up local storage in axiosWithAuth yet
             console.log(res)
             localStorage.setItem('token',res.data.access_token); 
-            props.history.push('/Profile')
+            props.history.push('/dashboard')
         })
         .catch(err => console.log('Login Error', err))
     }

@@ -16,7 +16,7 @@ import user_profile from '../assets/user_profile.jpg'
 
 
 
-const Profile = () => {
+const Profiles = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [currentSpecialist, setCurrentSpecialist] = useState([]);
@@ -45,7 +45,7 @@ const Profile = () => {
     } else {
         return (
             <div>
-                <h1>Welcome to your dashboard</h1>
+                <h1>Welcome to your Dashboard</h1>
                 <Container>
                     <Row>
                         <Col xs="12" s="8" md="4">        
@@ -79,4 +79,4 @@ const Profile = () => {
 
 };
 
-export default Profile;
+export default Profiles;

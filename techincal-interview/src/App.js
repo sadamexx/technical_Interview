@@ -6,11 +6,12 @@ import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Specialist from './components/Specialist';
+import './App.css';
 
 function App() {
   return(
     <Router>
-      <div className='App'>
+      <div>
         <Route exact path='/' component={Login}/>
         <PrivateRoute 
         path='/dashboard' 
