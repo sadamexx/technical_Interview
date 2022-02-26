@@ -35,6 +35,7 @@ const Specialist = ({user}) => {
                 <div>
                     
                         <h1>Specialist</h1>
+                        <p></p>
       
                 </div>
             )

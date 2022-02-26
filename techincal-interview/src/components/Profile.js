@@ -12,7 +12,8 @@ import {
     CardImg
 } from "reactstrap";
 import Projects from './Projects';
-import user_profile from '../assets/user_profile.jpg'
+import user_profile from '../assets/user_profile.jpg';
+import NavBar from './NavBar';
 
 
 
@@ -45,10 +46,13 @@ const Profiles = () => {
     } else {
         return (
             <div>
-                <h1>Welcome to your Dashboard</h1>
+                <NavBar />
+                <div>
+                <h1>Welcome to your Profile</h1>
+                </div>
                 <Container>
-                    <Row>
-                        <Col xs="12" s="8" md="4">        
+                    <Row >
+                        <Col xs="12" s="8" md="4" >        
                             <Card style={{ borderColor: '#B8B5FF'}}>
                                 <CardBody className= "text-center">
                                     <div style={{ backgroundColor: '#B8B5FF', paddingBottom:'20px', marginBottom: '10px'}}>
@@ -68,10 +72,13 @@ const Profiles = () => {
                                 </CardBody>
                             </Card>
                         </Col>
+                        <div>
+
+                        </div>
                 </Row>
                 </Container>
                 <div>
-                    <Projects />
+                    {/* <Projects /> */}
                 </div>
             </div>
         )

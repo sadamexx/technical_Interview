@@ -13,28 +13,27 @@ import Projects from '../assets/Projects.jpg';
 import Scope from '../assets/Scope.jpg';
 import Specialist from '../assets/Specialist.jpg';
 
-const OptionCard = (props) => {  
+const OptionCard = ({name}) => { 
+    const images = [Profile, Specialist, Projects, Scope
+    ]
+//work on mapping images later
+   
     
-
-
-
-    
-    return(
+    return(        
         <Col xs="12" s="6" md>
-            <Card>               
-                
+        <Link to = '/${name}'>
+            <Card>         
                 <CardImg 
-                alt={props.name}
-                src={Specialist}
-               
+                alt={name}
+                src={images[1]}
                 />
-            
                 <CardBody className="text-center" style={{ backgroundColor: '#B8B5FF'}} >
-                    <CardTitle tag="h3" >{props.name}</CardTitle>
+                    <CardTitle tag="h3" >{name}</CardTitle>
                 </CardBody>
             </Card>
-
+            </Link>
         </Col>
+
     )
 };
 

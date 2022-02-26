@@ -7,17 +7,21 @@ import Profile from '../assets/Profile.jpg';
 import Projects from '../assets/Projects.jpg';
 import Scope from '../assets/Scope.jpg';
 import Specialist from '../assets/Specialist.jpg';
+import NavBar from './NavBar';
 
 
 const Dashboard = () => {
-    const images = [Profile, Specialist, Projects, Scope
-    ]
+    
     const initialValue = ['Profile', 'Specialist', 'Projects', 'Scope']    
     const [options, setOptions] = useState(initialValue)
-    const [photos, setPhotos] =useState(images);
+    
 
     return(
         <div>
+            <NavBar />
+            <div>
+            <h1>Welcome to your Dashboard</h1>
+            </div>
             <Container>
                 <Row>
            {options.map((x, id) => {

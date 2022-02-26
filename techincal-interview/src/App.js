@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Specialist from './components/Specialist';
+import Projects from './components/Projects';
 import './App.css';
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
         <PrivateRoute 
         path='/Specialist' 
         component={Specialist}/>
+        <PrivateRoute 
+        path='/Projects' 
+        component={Projects}/>
+        
       </div>
     </Router>
   )
