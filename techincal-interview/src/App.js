@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Specialist from './components/Specialist';
 import Projects from './components/Projects';
+import ProjectShow from './components/ProjectShow';
 import './App.css';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         <PrivateRoute 
         path='/Projects' 
         component={Projects}/>
+        <PrivateRoute 
+        path='/ProjectShow' 
+        component={ProjectShow}/>
         
       </div>
     </Router>

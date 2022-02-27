@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import { Container, Row } from 'reactstrap';
 import Scopes from './Scopes'
+import NavBar from './NavBar';
 
 
 
 const ProjectShow = (props) => {
+    console.log('props Project Show', props)
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [projectShow, setProjectShow] = useState([]);
  
     useEffect(() => {
-        axiosWithAuth()
-        // .get(`/api/v2/projects/${props.projectId}`)        
+        axiosWithAuth()                
+        // .get(`/api/v2/projects/$parseInt({props.data.data.id})`)
         .get('/api/v2/projects/128674921944584192')
         .then(
             (result) => {
@@ -34,6 +36,9 @@ const ProjectShow = (props) => {
     } else {
         return (
             <div>
+                <div>
+                    <NavBar/>
+                </div>
                 <h1>ProjectShow</h1>
                 <h4>client={projectShow.data.data.client.name}</h4>
                 <h4>Project Name:{projectShow.data.data.name}</h4>

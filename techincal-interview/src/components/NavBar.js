@@ -28,9 +28,9 @@ import {
                   <Nav  navbar>
                       <NavItem>
                           <NavLink href='/dashboard'>Dashboard</NavLink>
-                          <NavLink href='/Profile'>Profile</NavLink>
-                          <NavLink href='/Specialist'>Specialist</NavLink>
+                          <NavLink href='/Profile'>Profile</NavLink>                         
                           <NavLink href='/Projects'>Projects</NavLink>
+                          <NavLink href='/ProjectShow'>ProjectShow</NavLink>
                       </NavItem>
                   </Nav>
                   </Collapse>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     Card,   
     CardBody,
@@ -15,36 +15,40 @@ import {
 
 
 const ProjectCard = (props) => {  
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const [projectId, setProjectId] = useState();
+    // const [isModalVisible, setIsModalVisible] = useState(false);
+    // const [projectId, setProjectId] = useState(1);
     
-    const showModal = async projectId => {
-        await setProjectId(projectId)
-        setIsModalVisible(true);
-    };
+    // const showModal = async projectId => {
+    //     await setProjectId(projectId)
+    //     setIsModalVisible(true);
+    // };
     
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
+    // const handleOk = () => {
+    //     setIsModalVisible(false);
+    // };
 
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
-
-    
+    // const handleCancel = () => {
+    //     setIsModalVisible(false);
+    // };
+//ran out of time for setting up a
+//works for navigation but not for API 
+//{`/ProjectShow/$parseInt({props.id})`}
     return(
         <Col xs="12" s="6" md="4">
-            {/* here is where I need to make alink to the project show page */}
+            <Link to='/ProjectShow'  style={{textDecoration: 'none'}} >
             <Card>
                 <CardBody style={{backgroundColor: 'lightGray'}}>
                     <CardTitle 
                     >Project: {props.name}</CardTitle>
                     <CardSubtitle>Client: {props.client}</CardSubtitle>
-                    <Button onClick={() => {
-                        showModal(projectId)}}>See More info</Button>
-                </CardBody>
+                    </CardBody>
             </Card>
-       
+            </Link>
+            {/* <Modal toggle={showModal}>
+                <ModalHeader>
+                        modal title
+                </ModalHeader>            
+            </Modal>       */}
         </Col>
     )
 };
