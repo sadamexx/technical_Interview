@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
-import { Container, Row } from 'reactstrap';
-import Scopes from './Scopes'
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
+import Scopes from './Scopes';
 import NavBar from './NavBar';
+import CardRole from './CardRole';
 
 
 
@@ -11,11 +12,12 @@ const ProjectShow = (props) => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [projectShow, setProjectShow] = useState([]);
- 
+    
+
     useEffect(() => {
         axiosWithAuth()                
         // .get(`/api/v2/projects/$parseInt({props.data.data.id})`)
-        .get('/api/v2/projects/128674921944584192')
+    .get('/api/v2/projects/128674040943611904')
         .then(
             (result) => {
                 setIsLoaded(false);
@@ -40,15 +42,32 @@ const ProjectShow = (props) => {
                     <NavBar/>
                 </div>
                 <h1>ProjectShow</h1>
-                <h4>client={projectShow.data.data.client.name}</h4>
-                <h4>Project Name:{projectShow.data.data.name}</h4>
-                <h4>Roles is an array:{projectShow.data.data.roles[0].name}</h4>
-                <h4>{projectShow.data.data.roles[0].description}</h4>
-                <h4>Scopes is an array map over this {projectShow.data.data.scopes[0].categories[0]}</h4>
-                <h4>Scopes id {projectShow.data.data.scopes.id}</h4>
-                <h4>Price total ${projectShow.data.data.summary.price_total}</h4>
+                    <Card>
+                        <CardBody>
+                            <CardTitle>Project Type: {projectShow.data.data.name}</CardTitle>
+                            <CardSubtitle>Client: {projectShow.data.data.client.name}</CardSubtitle>
+                            <CardSubtitle>Price Total: ${projectShow.data.data.summary.total_billable} </CardSubtitle>
+                            {
+                                projectShow.data.data.roles.map(role => {
+                                    return(
+                                        <CardRole
+                                        key={role.id}
+                                        name={role.name}
+                                        description={role.description}
+                                        />
+                                    )
+                                }
+                                )
+                            }
+                          
+                            
+                            <h4>Scopes is an array map over this {projectShow.data.data.scopes[0].categories[0]}</h4>
+                            <h4>Scopes id{projectShow.data.data.scopes.id}</h4>
+                            
+                        </CardBody>
+                    </Card>
                 <div>
-                    <Scopes />
+                    <Scopes scopeId={projectShow.data.data.scopes[0].id}/>
                 </div>
             </div>
         )

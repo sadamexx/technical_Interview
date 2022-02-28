@@ -23,14 +23,13 @@ import {
           <div style ={{backgroundColor: '#BAABDA'}}>
               <Navbar  expand="md" >
                   <NavbarBrand className='me-2' href="/">Wethos</NavbarBrand>
-                  <NavbarToggler className="me-2" onClick = {toggle} />
+                  <NavbarToggler className="me-2" onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>
                   <Nav  navbar>
                       <NavItem>
                           <NavLink href='/dashboard'>Dashboard</NavLink>
                           <NavLink href='/Profile'>Profile</NavLink>                         
                           <NavLink href='/Projects'>Projects</NavLink>
-                          <NavLink href='/ProjectShow'>ProjectShow</NavLink>
                       </NavItem>
                   </Nav>
                   </Collapse>

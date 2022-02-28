@@ -12,7 +12,7 @@ import NavBar from './NavBar';
 
 const Dashboard = () => {
     
-    const initialValue = ['Profile', 'Specialist', 'Projects', 'Scope']    
+    const initialValue = ['Profile', 'Projects']    
     const [options, setOptions] = useState(initialValue)
     
 

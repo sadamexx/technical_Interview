@@ -21,11 +21,12 @@ const OptionCard = ({name}) => {
     
     return(        
         <Col xs="12" s="6" md>
-        <Link to = '/${name}'>
+        <Link to = {`/${name}`} style={{textDecoration: 'none'}}>
             <Card>         
                 <CardImg 
                 alt={name}
                 src={images[1]}
+                style={{opacity: '0.8'}}
                 />
                 <CardBody className="text-center" style={{ backgroundColor: '#B8B5FF'}} >
                     <CardTitle tag="h3" >{name}</CardTitle>

@@ -8,11 +8,12 @@ const Scopes = (props) => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [scopes, setScopes] = useState([]);
- 
+    const id = parseInt(props.scopeId)
+
     useEffect(() => {
         axiosWithAuth()
         // .get(`/api/v2/projects/${props.projectId}`)        
-        .get('/api/v2/scopes/10859')
+        .get(`/api/v2/scopes/${id}`)
         .then(
             (result) => {
                 setIsLoaded(false);
@@ -35,9 +36,10 @@ const Scopes = (props) => {
             <div>
                 <h1>Scope show</h1>
                 {/* below is an array. need to map to pull out info */}
-                <p>Task name: {scopes.data.data.tasks[0].name}</p>
-                <p>Task description: {scopes.data.data.tasks[0].description}</p>
+                <p>Task name:{scopes.data.data.tasks[0].name}</p>
+                <p>Task description:{scopes.data.data.tasks[0].description}</p>
                 <p>Task price: ${scopes.data.data.tasks[0].price}</p>
+            
                 {/* <h4>client={projectShow.data.data.client.name}</h4>
                 <h4>Project Name:{projectShow.data.data.name}</h4>
                 <h4>Roles is an array:{projectShow.data.data.roles[0].name}</h4>

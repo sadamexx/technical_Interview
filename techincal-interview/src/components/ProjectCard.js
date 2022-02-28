@@ -12,44 +12,29 @@ import {
     ModalBody,
     ModalFooter
 } from "reactstrap";
+import ProjectShow from './ProjectShow';
 
 
 const ProjectCard = (props) => {  
-    // const [isModalVisible, setIsModalVisible] = useState(false);
-    // const [projectId, setProjectId] = useState(1);
+    console.log('projectCard props', props)
+    const [isOpen, setIsOpen] = useState(false);
     
-    // const showModal = async projectId => {
-    //     await setProjectId(projectId)
-    //     setIsModalVisible(true);
-    // };
     
-    // const handleOk = () => {
-    //     setIsModalVisible(false);
-    // };
+//ran out of time for setting up a modal
 
-    // const handleCancel = () => {
-    //     setIsModalVisible(false);
-    // };
-//ran out of time for setting up a
-//works for navigation but not for API 
-//{`/ProjectShow/$parseInt({props.id})`}
     return(
         <Col xs="12" s="6" md="4">
-            <Link to='/ProjectShow'  style={{textDecoration: 'none'}} >
+            <Link style={{textDecoration: 'none'}} to={`/ProjectShow/$parseInt({props.id})`}>
             <Card>
                 <CardBody style={{backgroundColor: 'lightGray'}}>
                     <CardTitle 
-                    >Project: {props.name}</CardTitle>
-                    <CardSubtitle>Client: {props.client}</CardSubtitle>
+                    >Project Type: {props.name}</CardTitle>
+                    <CardSubtitle>Client Name: {props.client}</CardSubtitle>
+                    
                     </CardBody>
             </Card>
             </Link>
-            {/* <Modal toggle={showModal}>
-                <ModalHeader>
-                        modal title
-                </ModalHeader>            
-            </Modal>       */}
-        </Col>
+         </Col>
     )
 };
 

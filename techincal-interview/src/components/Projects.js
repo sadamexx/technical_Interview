@@ -35,7 +35,7 @@ const Projects = () => {
             <div>
                 <NavBar />
                 <div>
-                <h1>Your Project List</h1>
+                <h1>My Project List</h1>
                 </div>
                 <Container>
                     <Row>
