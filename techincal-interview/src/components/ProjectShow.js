@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
+import { Col, Row, Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
 import Scopes from './Scopes';
 import NavBar from './NavBar';
 import CardRole from './CardRole';
+import ScopeList from './ScopeList';
 
 
 
 const ProjectShow = (props) => {
-    console.log('props Project Show', props)
+    // console.log('props Project Show', props)
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [projectShow, setProjectShow] = useState([]);
-    
+    const [scopeId, setScopeId] = useState();
 
     useEffect(() => {
         axiosWithAuth()                
@@ -22,7 +23,9 @@ const ProjectShow = (props) => {
             (result) => {
                 setIsLoaded(false);
                 setProjectShow(result);
+                setScopeId(result.data.data.scopes[0].id)
                 console.log('projectShow', projectShow)
+                // console.log('scopeId', scopeId)
             },
             (error) => {
                 setIsLoaded(true);
@@ -35,18 +38,23 @@ const ProjectShow = (props) => {
         return<div>Error {error.message}</div>
     } else if (!projectShow.data) {
         return <div>Loading...</div>
-    } else {
+    } else if (!scopeId == true){
+        return <div>Loading...</div>
+    }
+    else {
         return (
             <div>
                 <div>
                     <NavBar/>
                 </div>
                 <h1>ProjectShow</h1>
+                <Col xs="12" s="6">
+             
                     <Card>
                         <CardBody>
-                            <CardTitle>Project Type: {projectShow.data.data.name}</CardTitle>
-                            <CardSubtitle>Client: {projectShow.data.data.client.name}</CardSubtitle>
-                            <CardSubtitle>Price Total: ${projectShow.data.data.summary.total_billable} </CardSubtitle>
+                            <CardTitle tag='h2'>Project Type: {projectShow.data.data.name}</CardTitle>
+                            <CardSubtitle tag='h3'>Client: {projectShow.data.data.client.name}</CardSubtitle>
+                            <CardSubtitle tag='h3'>Price Total: ${projectShow.data.data.summary.total_billable} </CardSubtitle>
                             {
                                 projectShow.data.data.roles.map(role => {
                                     return(
@@ -59,15 +67,23 @@ const ProjectShow = (props) => {
                                 }
                                 )
                             }
-                          
-                            
-                            <h4>Scopes is an array map over this {projectShow.data.data.scopes[0].categories[0]}</h4>
-                            <h4>Scopes id{projectShow.data.data.scopes.id}</h4>
-                            
+                            {
+                                projectShow.data.data.scopes[0].categories.map(scope => {
+                                    return(
+                                        <p>{scope}</p>
+
+                                        
+                                    )
+                                })
+                            }                    
+                                                        
                         </CardBody>
                     </Card>
-                <div>
+                    
+                    </Col>
                     <Scopes scopeId={projectShow.data.data.scopes[0].id}/>
+                <div>
+                    
                 </div>
             </div>
         )
