@@ -20,7 +20,7 @@ const OptionCard = ({name}) => {
    
     
     return(        
-        <Col xs="12" s="6" md>
+        <Col xs="12" s="6" md="4">
         <Link to = {`/${name}`} style={{textDecoration: 'none'}}>
             <Card>         
                 <CardImg 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
-import { Container, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import TaskItems from './TaskItems';
 
 
@@ -36,7 +36,7 @@ const Scopes = (props) => {
             <div>
                 <h3>Scopes and Tasks</h3>
                 <Container>
-                    <Col>
+                    <Row>
                     {
                         scopes.data.data.tasks.map(task => {
                             return(
@@ -49,7 +49,7 @@ const Scopes = (props) => {
                             />)
                         })
                     }
-                    </Col>
+                    </Row>
                 </Container>
             </div>
         )

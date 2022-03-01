@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import Specialist from './components/Specialist';
 import Projects from './components/Projects';
 import ProjectShow from './components/ProjectShow';
+import LogOut from './components/LogOut';
 import './App.css';
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
         <PrivateRoute 
         path='/ProjectShow' 
         component={ProjectShow}/>
-        
+        <PrivateRoute
+        exact path= '/logout'
+        component={LogOut} />
       </div>
     </Router>
   )

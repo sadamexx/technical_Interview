@@ -19,7 +19,7 @@ const Dashboard = () => {
     return(
         <div>
             <NavBar />
-            <div>
+            <div className='text-center'>
             <h1>Welcome to your Dashboard</h1>
             </div>
             <Container>

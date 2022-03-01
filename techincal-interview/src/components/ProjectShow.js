@@ -48,13 +48,13 @@ const ProjectShow = (props) => {
                     <NavBar/>
                 </div>
                 <h1>ProjectShow</h1>
-                <Col xs="12" s="6">
+                <Col>
              
                     <Card>
                         <CardBody>
-                            <CardTitle tag='h2'>Project Type: {projectShow.data.data.name}</CardTitle>
-                            <CardSubtitle tag='h3'>Client: {projectShow.data.data.client.name}</CardSubtitle>
-                            <CardSubtitle tag='h3'>Price Total: ${projectShow.data.data.summary.total_billable} </CardSubtitle>
+                            <CardTitle tag='h3'>Project Type: {projectShow.data.data.name}</CardTitle>
+                            <CardSubtitle tag='h5'>Client: {projectShow.data.data.client.name}</CardSubtitle>
+                            <CardSubtitle tag='h5'>Price Total: ${projectShow.data.data.summary.total_billable} </CardSubtitle>
                             {
                                 projectShow.data.data.roles.map(role => {
                                     return(

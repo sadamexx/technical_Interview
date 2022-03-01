@@ -1,14 +1,15 @@
 import React from 'react';
-import {Card, CardSubtitle, CardTitle, CardText} from 'reactstrap';
+import {Col, CardGroup, Card, CardSubtitle, CardTitle, CardText} from 'reactstrap';
 
 const TaskItems = props => {
     console.log('taskitem props', props)
     
     return(
-   <div>
-    
-    <Card>
-        <CardTitle>
+  
+    <Col xs="12" s="6" md="4">
+    <CardGroup>
+    <Card style={{margin: '15px', borderColor: '#6A5495', backgroundColor: '#F8EDE3', boxShadow: '5px 5px lightgray '}}>
+        <CardTitle tag='h6'>
             Task: {props.name}
         </CardTitle>
         <CardSubtitle>
@@ -20,9 +21,10 @@ const TaskItems = props => {
             <CardText>
                 Description: {props.description}
             </CardText>
-        
     </Card>
-    </div>
+    </CardGroup>
+    </Col>
+   
     )
 };
 
