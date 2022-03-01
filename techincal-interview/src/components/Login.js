@@ -36,11 +36,11 @@ const Login = (props) => {
     }
 
     return(
-        <>
+        <div className="text-center">
         <h1>Welcome To Your Wethos Info!</h1>
         
         <form onSubmit={login}>
-            <label>Username</label>
+            <label>Username: &nbsp;</label>
             <input
             type="text"
             name="username"
@@ -48,7 +48,8 @@ const Login = (props) => {
             value={credentials.username}
             onChange={handleChange}
             />
-            <label>Password</label>
+            &nbsp;
+            <label>Password:&nbsp;</label>
             <input
             type="password"
             name="password"
@@ -58,7 +59,7 @@ const Login = (props) => {
             />
             <button>Log In </button>
         </form>
-        </>
+        </div>
     );
 };
 

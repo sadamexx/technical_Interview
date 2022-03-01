@@ -47,12 +47,12 @@ const Profiles = () => {
         return (
             <div>
                 <NavBar />
-                <div>
+                <div className="text-center">
                 <h1>Welcome to your Profile</h1>
                 </div>
-                <Container>
+                <Container >
                     <Row >
-                        <Col xs="12" s="8" md="4" >        
+                        <Col className=' align-self-center' md='4'>        
                             <Card style={{ borderColor: '#B8B5FF'}}>
                                 <CardBody className= "text-center">
                                     <div style={{ backgroundColor: '#B8B5FF', paddingBottom:'20px', marginBottom: '10px'}}>
