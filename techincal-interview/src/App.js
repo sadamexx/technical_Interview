@@ -29,7 +29,7 @@ function App() {
         path='/Projects' 
         component={Projects}/>
         <PrivateRoute 
-        path='/ProjectShow' 
+        path='/ProjectShow/:id' 
         component={ProjectShow}/>
         <PrivateRoute
         exact path= '/logout'
